@@ -1,0 +1,36 @@
+//Código das tabelas
+            // Criar elemento principal
+            const card = document.createElement("div");
+            card.classList.add("evento-card");
+
+            // Inserir o HTML interno com template string
+            card.innerHTML = `
+                <div class="evento-imagem">
+                    <img src="../" alt="">
+                    <span class="categoria ${dados[0].categoria}">${dados[0].categoria}</span>
+                </div>
+                <div class="evento-info">
+                    <h3>${dados[0].nome}</h3>
+                    <p class="localizacao"><i class="bi bi-geo-alt"></i> ${dados[0].local}</p>
+                    <p class="data"><i class="bi bi-calendar"></i> ${dados[0].data}</p>
+                    <div class="evento-stats">
+                        <span class="participantes"><i class="bi bi-people"></i> ${dados[0].numeroVagas}/${dados[0].numeroVagas}</span>
+                        <span class="dificuldade ${dados[0].dificuldade}">${dados[0].dificuldade}</span>
+                    </div>
+                    <button class="btn-inscrever">Inscrever-se</button>
+                </div>
+            `;
+
+            // Adicionar o card ao container principal no HTML
+            let eventoCard = document.querySelector('.eventos-grid');
+            alert(" Eventos - card -> " + eventoCard)
+            try{
+                alert(card);
+                alert(card.innerHTML)
+                eventoCard.appendChild(card);
+                alert("Tudo certo");
+            }
+            catch(error)
+            {
+                alert("houve o erro -> " + error)
+            }

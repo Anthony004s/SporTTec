@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vôlei - SporTTech</title>
+    <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/modalidades.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="nav-logo">
+                    <img src="../imgs/logo.png" alt="SporTTech Logo">
+                    <span>SporTTech</span>
+                </div>
+            </a>
+            <div class="nav-menu">
+                <div class="nav-item"><a href="index.html">Eventos</a></div>
+                <div class="nav-item"><a href="geolocalizacao.html">Próximos de Mim</a></div>
+                <div class="nav-item"><a href="criar-evento.html">Criar Evento</a></div>
+                <div id="loginNavbar" class="nav-item">
+                    <a href="login.html" class="login-btn">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="page-header">
+        <div class="page-header-content">
+            <h1>Eventos de Vôlei</h1>
+            <p>Encontre partidas, torneios e jogos de vôlei</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="localizacao"><i class="bi bi-geo-alt"></i> Localização:</label>
+                    <select class="filter-select" id="localizacao">
+                        <option value="todos">Toda São Paulo</option>
+                        <option value="centro">Centro</option>
+                        <option value="zona-sul">Zona Sul</option>
+                        <option value="zona-norte">Zona Norte</option>
+                        <option value="zona-leste">Zona Leste</option>
+                        <option value="zona-oeste">Zona Oeste</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="modalidade"><i class="bi bi-funnel"></i> Modalidade:</label>
+                    <select class="filter-select" id="modalidade">
+                        <option value="todos">Todas as modalidades</option>
+                        <option value="quadra">Vôlei de Quadra</option>
+                        <option value="praia">Vôlei de Praia</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="eventos-grid">
+                <div class="evento-card">
+                    <div class="evento-imagem">
+                        <img src="../imgs/Volei.png" alt="Torneio de Vôlei">
+                        <span class="categoria volei">Vôlei</span>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Torneio de Vôlei - Duplas</h3>
+                        <p class="localizacao"><i class="bi bi-geo-alt"></i> Praia de Copacabana, SP</p>
+                        <p class="data"><i class="bi bi-calendar"></i> 12 Dez, 2025 - 09:00</p>
+                        <div class="evento-stats">
+                            <span class="participantes"><i class="bi bi-people"></i> 12/24</span>
+                            <span class="dificuldade medio">Médio</span>
+                        </div>
+                        <button class="btn-inscrever">Inscrever-se</button>
+                    </div>
+                </div>
+
+                <div class="evento-card">
+                    <div class="evento-imagem">
+                        <img src="../imgs/Volei.png" alt="Vôlei Semanal">
+                        <span class="categoria volei">Vôlei</span>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Vôlei Semanal - Sábados</h3>
+                        <p class="localizacao"><i class="bi bi-geo-alt"></i> Ginásio do Ibirapuera, SP</p>
+                        <p class="data"><i class="bi bi-calendar"></i> Todo Sábado - 16:00</p>
+                        <div class="evento-stats">
+                            <span class="participantes"><i class="bi bi-people"></i> 8/12</span>
+                            <span class="dificuldade facil">Fácil</span>
+                        </div>
+                        <button class="btn-inscrever">Inscrever-se</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="../imgs/logo.png" alt="SporTTech">
+                    <span>SporTTech</span>
+                </div>
+                <p>Conectando atletas e organizadores através da tecnologia</p>
+                <div class="social-links">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Eventos</a></li>
+                    <li><a href="geolocalizacao.html">Próximos de Mim</a></li>
+                    <li><a href="criar-evento.html">Criar Evento</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Modalidades</h4>
+                <ul>
+                    <li><a href="futebol.html">Futebol</a></li>
+                    <li><a href="corrida.html">Corrida</a></li>
+                    <li><a href="basquete.html">Basquete</a></li>
+                    <li><a href="volei.html">Vôlei</a></li>
+                    <li><a href="todos.html">Ver Todos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="bi bi-envelope"></i> contato@sporttech.com</li>
+                    <li><i class="bi bi-phone"></i> (11) 97791-5992</li>
+                    <li><i class="bi bi-geo-alt"></i> São Paulo, SP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SporTTech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="../js/usuarioLogado.js"></script>
+</body>
+</html>

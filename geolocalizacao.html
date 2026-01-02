@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SporTTech - Eventos Próximos</title>
+    <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/geolocalizacao.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!--Caixas de aviso personalizadas-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="nav-logo">
+                    <img src="../imgs/logo.png" alt="SporTTech Logo">
+                    <span>SporTTech</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="index.html">Eventos</a>
+                </div>
+                <div class="nav-item">
+                    <a href="geolocalizacao.html" class="active">Próximos de Mim</a>
+                </div>
+                <div class="nav-item">
+                    <a href="criar-evento.html">Criar Evento</a>
+                </div>
+                <div id="loginNavbar" class="nav-item">
+                    <a href="login.html" class="login-btn">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section id="page-header">
+        <div class="page-header-content">
+            <h1>Eventos Próximos de Você</h1>
+            <p>Com base na sua localização atual</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- LOCALIZAÇÃO E FILTROS -->
+        <section class="section">
+            <div class="location-info">
+                <div class="location-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div class="location-text">
+                    <strong id="location-status">Obtendo localização...</strong>
+                    <span id="search-status">Buscando eventos próximos</span>
+                </div>
+            </div>
+
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="radius-select"><i class="bi bi-geo"></i> Raio de busca:</label>
+                    <select class="filter-select" id="radius-select">
+                        <option value="5">5 km</option>
+                        <option value="10" selected>10 km</option>
+                        <option value="15">15 km</option>
+                        <option value="20">20 km</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sport-select"><i class="bi bi-filter"></i> Modalidade:</label>
+                    <select class="filter-select" id="sport-select">
+                        <option value="all">Todas</option>
+                        <option value="futebol">Futebol</option>
+                        <option value="basquete">Basquete</option>
+                        <option value="volei">Vôlei</option>
+                        <option value="corrida">Corrida</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="section">
+            <div id="events-results">
+                <div class="no-events">
+                    <div class="no-events-icon">
+                        <i class="bi bi-map"></i>
+                    </div>
+                    <h3>Buscando eventos próximos...</h3>
+                    <p>Analisando sua localização para encontrar os melhores eventos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA -->
+        <section class="section">
+            <div class="results-header">
+                <h2>Eventos no Mapa</h2>
+                <p>Encontre eventos esportivos na sua região</p>
+            </div>
+            <div class="mapa-container">
+                <div id="map"></div>
+                <div class="mapa-legenda">
+                    <h4>Legenda:</h4>
+                    <div class="legenda-item">
+                        <span class="pin futebol"></span>
+                        <span>Futebol</span>
+                    </div>
+                    <div class="legenda-item">
+                        <span class="pin corrida"></span>
+                        <span>Corrida</span>
+                    </div>
+                    <div class="legenda-item">
+                        <span class="pin basquete"></span>
+                        <span>Basquete</span>
+                    </div>
+                    <div class="legenda-item">
+                        <span class="pin outros"></span>
+                        <span>Outros</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMENDAÇÕES -->
+        <section class="section">
+            <div class="recommendations">
+                <h3>Não encontrou o que procurava?</h3>
+                <p>Que tal criar um evento ou explorar outras áreas?</p>
+                <a href="criar-evento.html" class="btn-primary">Criar Evento</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="../imgs/logo.png" alt="SporTTech">
+                    <span>SporTTech</span>
+                </div>
+                <p>Conectando atletas e organizadores através da tecnologia</p>
+                <div class="social-links">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Eventos</a></li>
+                    <li><a href="geolocalizacao.html">Próximos de Mim</a></li>
+                    <li><a href="criar-evento.html">Criar Evento</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Modalidades</h4>
+                <ul>
+                    <li><a href="futebol.html">Futebol</a></li>
+                    <li><a href="corrida.html">Corrida</a></li>
+                    <li><a href="basquete.html">Basquete</a></li>
+                    <li><a href="volei.html">Vôlei</a></li>
+                    <li><a href="todos.html">Ver Todos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="bi bi-envelope"></i> contato@sporttech.com</li>
+                    <li><i class="bi bi-phone"></i> (11) 97791-5992</li>
+                    <li><i class="bi bi-geo-alt"></i> São Paulo, SP</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 SporTTech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/geolocalizacao.js"></script>
+    <script src="../js/usuarioLogado.js"></script>
+       <!--Erro de inscrição-->
+    <script>
+        const nomeURL = window.location.search;
+        const param = new URLSearchParams(nomeURL);
+        if(param.get("inscrito") === "true")
+        {
+            Swal.fire({
+                icon: 'sucess',
+                title: 'Inscrição',
+                text: 'A sua inscrição foi concluída com sucesso!!!',
+                confirmButtonText: 'Ok'
+            })
+        }
+        if(param.get("jainscrito") == "true")
+        {
+            Swal.fire({
+                icon: 'error',
+                title: 'Inscrição',
+                text: 'Você já está inscrito!!!!',
+                confirmButtonText: 'Ok'
+            })
+        }
+        if(param.get("tipo_user") == "institution")
+        {
+            Swal.fire({
+                icon: 'error',
+                title: 'Inscrição',
+                text: 'Você pode estar deslogado ou logado com instituição!!!!',
+                confirmButtonText: 'Ok'
+            })
+        }
+    </script>
+</body>
+</html>

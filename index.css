@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+#navbar {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #1e3a5f; 
+}
+
+.nav-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item a:hover {
+    color: #1e3a5f; 
+}
+
+.login-btn {
+    background: #1e3a5f; 
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background: #152942; 
+}
+
+
+#hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%); 
+    color: white;
+    padding: 8rem 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+    border-radius: 25px 25px 25px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #3498db; 
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2980b9; 
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #1e3a5f; 
+}
+
+.hero-image img {
+    max-width: 500px;
+    width: 100%;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1e3a5f; 
+    margin-bottom: 1rem;
+}
+
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.evento-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    border: 1px solid #e3f2fd; 
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15); 
+}
+
+.evento-imagem {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.evento-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%; 
+}
+
+.evento-imagem img[alt*="corrida"],
+.evento-imagem img[alt*="Corrida"],
+.evento-imagem img[alt*="corredor"] {
+    object-position: center 20%; 
+}
+
+.evento-card:hover .evento-imagem img {
+    transform: scale(1.05);
+}
+
+.categoria {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #1e3a5f;
+    border: 1px solid #e3f2fd;
+    z-index: 2;
+}
+
+.evento-info {
+    padding: 1.5rem;
+}
+
+.evento-info h3 {
+    margin-bottom: 1rem;
+    color: #1e3a5f; 
+}
+
+.localizacao, .data {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.evento-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.dificuldade {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.facil { background: #e3f2fd; color: #1e3a5f; } 
+.medio { background: #bbdefb; color: #1565c0; } 
+.dificil { background: #90caf9; color: #0d47a1; } 
+
+.btn-inscrever {
+    width: 100%;
+    padding: 0.75rem;
+    background: #1e3a5f; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-inscrever:hover {
+    background: #152942; 
+}
+
+.mapa-container {
+    position: relative;
+    height: 500px;
+}
+
+#map {
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e3f2fd;
+}
+
+.mapa-legenda {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border: 1px solid #e3f2fd;
+}
+
+.mapa-legenda h4 {
+    margin-bottom: 15px;
+    color: #1e3a5f;
+    font-size: 16px;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.pin {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.pin.futebol { background: #e74c3c; }
+.pin.corrida { background: #3498db; }
+.pin.basquete { background: #2ecc71; }
+.pin.outros { background: #f39c12; }
+
+
+.popup-content {
+    padding: 10px;
+    min-width: 200px;
+}
+
+.popup-content h4 {
+    margin-bottom: 8px;
+    color: #1e3a5f;
+    font-size: 14px;
+}
+
+.popup-content p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.popup-content .btn-inscrever {
+    background: #1e3a5f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 8px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.popup-content .btn-inscrever:hover {
+    background: #152942;
+}
+
+
+.passos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.passo {
+    padding: 2rem;
+}
+
+.passo-icon {
+    width: 80px;
+    height: 80px;
+    background: #1e3a5f; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+
+#estatisticas {
+    background: #1e3a5f; 
+    color: white;
+    text-align: center;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: #1a1a1a;
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #3498db;
+}
+
+.footer-logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #3498db; 
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #3498db; 
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3498db; 
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 6rem 1rem 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .mapa-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+    border-color: #667eea;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 10px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.user-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-info {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-info span {
+    font-size: 12px;
+    color: #666;
+    text-transform: capitalize;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #eee;
+    margin: 5px 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background: #f8f9fa;
+    color: #667eea;
+}
+
+.dropdown-item i {
+    margin-right: 8px;
+    font-size: 16px;
+}
